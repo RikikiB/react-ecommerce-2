@@ -17,11 +17,14 @@
   "devDependencies": {
     "babel-jest": "^27.1.1",
     "jest": "^27.1.1",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "regenerator-runtime": "^0.13.9",
+    "supertest": "^6.1.6"
   },
   "jest": {
     "extensionsToTreatAsEsm": [
       ".ts"
-    ]
+    ],
+    "setupFilesAfterEnv": ["./setupTests.js"]
   }
 }
