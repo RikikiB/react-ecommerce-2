@@ -12,22 +12,7 @@ function App() {
     <Router>
       <div className='App'>
         <div className='container'>
-          <Header />{' '}
-          <nav>
-            <ul>
-              <li>
-                <Link to='/'>Home</Link>
-              </li>
-              <li>
-                <Link to='/about'>About</Link>
-              </li>
-              <li>
-                <Link to='/TermsAndConditions'>
-                  Terms and Conditions
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <Header />
           <div className='main'>
             <div>
               <Switch>
