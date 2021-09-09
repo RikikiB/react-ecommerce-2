@@ -1,0 +1,11 @@
+.Header {
+  background-color: red;
+  color: white;
+  display: flex;
+  align-items: right;
+}
+
+.button {
+  display: flex;
+  align-items: left;
+}
