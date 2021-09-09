@@ -1,9 +1,9 @@
 
-function ProductCard({addToCart}){
+function ProductCard({addToCart}: any){
     return(
         <div data-testid="ProductCard" className="ProductCard">
         <img src="" alt="ProductImage"/>
-        <div></div>
+        <div data-testid="price"></div>
         <button onClick={()=>addToCart()} aria-label="Add To Cart">+</button>
         </div>
     ) 

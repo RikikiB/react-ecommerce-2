@@ -23,13 +23,13 @@ describe("ProductCard", () => {
     const ui = screen.getByLabelText("Add To Cart");
     ui.click();
     expect(mockAddToCart).toHaveBeenCalledTimes(1);
-    // expect(mockAddToCart).toHaveBeenCalledWith({price: 11})
   });
 
   it("shows the product price", () => {
     const product = {price: 11.11};
     render(<ProductCard addToCart={jest.fn()} product={product} />)
-    const ui = screen.getByTestId('price');
+  screen.getByTestId('price');
+
   });
 
   // it('shows the product short description', () => {
