@@ -1,6 +1,6 @@
-import "./App.scss"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import TermsAndConditions from "./components/TermsAndConditions"
+import "./App.scss";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import TermsAndConditions from "./components/TermsAndConditions";
 function App() {
   return (
     <Router>
@@ -24,17 +24,12 @@ function App() {
           </div>
           <div className="main">
             <div>
-              {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
               <Switch>
-                <Route path="/about">
-                  <About />
-                </Route>
                 <Route path="/TermsAndConditions">
                   <TermsAndConditions />
                 </Route>
                 <Route path="/">
-                  <Home />
+                  <Shop />
                 </Route>
               </Switch>
             </div>
@@ -43,17 +38,10 @@ function App() {
         </div>
       </div>
     </Router>
-  )
+  );
 }
-function Home() {
-  return <h2>Home</h2>
-}
-
-function About() {
-  return <h2>About</h2>
+function Shop() {
+  return <h2>Shop</h2>;
 }
 
-function Users() {
-  return <h2>Users</h2>
-}
-export default App
+export default App;
