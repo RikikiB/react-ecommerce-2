@@ -1,0 +1,22 @@
+.Header {
+  background-color: rgb(255, 60, 0);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 1000;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font: bold;
+  border-bottom: 3px;
+}
+
+button {
+  margin-right: 1rem;
+  background-color: rgb(255, 60, 0);
+  color: white;
+  border: none;
+}
+h3 {
+  margin-left: 1rem;
+}
