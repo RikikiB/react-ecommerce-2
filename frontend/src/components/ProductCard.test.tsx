@@ -32,11 +32,18 @@ describe("ProductCard", () => {
 
   });
 
-  // it('shows the product short description', () => {
-  //   render(<ProductCard addToCart/>);
-  //   const ui = sc
-
-  // }
+  it('shows the product short description', () => {
+    render(<ProductCard addToCart={jest.fn()}/>);
+   const ui =screen.getByTestId('description');
+   expect(ui).toHaveTextContent('description');
 });
 
-// it('shows the product name')
+it('shows the product name', () => {
+  render(<ProductCard addToCart={jest.fn()} />);
+  const ui = screen.getByTitle('productName');
+ 
+
+});
+
+});
+
