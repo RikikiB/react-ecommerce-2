@@ -4,13 +4,13 @@ import './Header.css'
 
 function Header() {
   return (
-    <div className='Header'>
-      XYZ CORPORATION
-      <div>
-        <button type='button' onClick={() => {}}>
-          <FontAwesomeIcon icon={faCartPlus} />
-        </button>
-      </div>
+    <div className='Header' data-testid='Header'>
+      <h3>XYZ CORPORATION</h3>
+      <button type='button' onClick={() => {}}>
+        {' '}
+        Cart
+        <FontAwesomeIcon icon={faCartPlus} />
+      </button>
     </div>
   )
 }

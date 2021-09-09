@@ -13,11 +13,11 @@
   /* width: 100; */
 
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 4rem 2fr 1fr;
   grid-template-areas:
-    "a c"
-    "b c"
-    "d c";
+    'a c'
+    'b c'
+    'd c';
 }
 
 .header {

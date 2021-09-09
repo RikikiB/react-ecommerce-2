@@ -2,10 +2,16 @@
   background-color: red;
   color: white;
   display: flex;
-  align-items: right;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 1000;
+  font-family: helvetica, arial;
+  border-bottom: 3px;
 }
 
-.button {
-  display: flex;
-  align-items: left;
+button {
+  margin-right: 1rem;
+}
+h3 {
+  margin-left: 1rem;
 }
