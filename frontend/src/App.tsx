@@ -1,28 +1,47 @@
-import './App.scss'
-
+import "./App.scss";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import TermsAndConditions from "./components/TermsAndConditions";
 function App() {
   return (
-    <div className='App'>
-      <div className='container'>
-        <div className='header'></div>
-        <div className='main'></div>
-
-        <div className='footer'>
-          <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'>
-            <path
-              fill='#74b4d4'
-              fill-opacity='1'
-              d='M0,96L48,96C96,96,192,96,288,96C384,96,480,96,576,117.3C672,139,768,181,864,186.7C960,192,1056,160,1152,149.3C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'
-            ></path>
-          </svg>
-          <a href='/'>Home</a>
-          <a href='/cart'>Cart</a>
-          <a href='/about'>About The Creators</a>
-          <h4> 2021 Punchcode team, all rights reserved</h4>
+    <Router>
+      <div className="App">
+        <div className="container">
+          <div className="header">
+            {" "}
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+                <li>
+                  <Link to="/TermsAndConditions">Terms and Conditions</Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="main">
+            <div>
+              <Switch>
+                <Route path="/TermsAndConditions">
+                  <TermsAndConditions />
+                </Route>
+                <Route path="/">
+                  <Shop />
+                </Route>
+              </Switch>
+            </div>
+          </div>
+          <div className="footer"></div>
         </div>
       </div>
-    </div>
-  )
+    </Router>
+  );
+}
+function Shop() {
+  return <h2>Shop</h2>;
 }
 
 export default App
