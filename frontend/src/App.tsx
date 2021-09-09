@@ -6,29 +6,28 @@ import {
   Link,
 } from 'react-router-dom'
 import TermsAndConditions from './components/TermsAndConditions'
+import Header from './components/Header'
 function App() {
   return (
     <Router>
       <div className='App'>
         <div className='container'>
-          <div className='header'>
-            {' '}
-            <nav>
-              <ul>
-                <li>
-                  <Link to='/'>Home</Link>
-                </li>
-                <li>
-                  <Link to='/about'>About</Link>
-                </li>
-                <li>
-                  <Link to='/TermsAndConditions'>
-                    Terms and Conditions
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <Header />{' '}
+          <nav>
+            <ul>
+              <li>
+                <Link to='/'>Home</Link>
+              </li>
+              <li>
+                <Link to='/about'>About</Link>
+              </li>
+              <li>
+                <Link to='/TermsAndConditions'>
+                  Terms and Conditions
+                </Link>
+              </li>
+            </ul>
+          </nav>
           <div className='main'>
             <div>
               <Switch>
