@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import TermsAndConditions from './components/TermsAndConditions'
 import Header from './components/Header'
+import Cart from './components/Cart'
 function App() {
   return (
     <Router>
@@ -16,6 +17,9 @@ function App() {
           <div className='main'>
             <div>
               <Switch>
+              <Route path='/cart'>
+                  <Cart />
+                </Route>
                 <Route path='/TermsAndConditions'>
                   <TermsAndConditions />
                 </Route>
