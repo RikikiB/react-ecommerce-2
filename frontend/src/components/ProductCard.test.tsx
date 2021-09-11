@@ -1,5 +1,22 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, cleanup } from "@testing-library/react";
 import ProductCard from "./ProductCard";
+
+function renderUi(props = {}) {
+  const products = {
+    price: 11.11,
+    name: "product1",
+    description: "description1",
+  };
+  const mockAddToCart = jest.fn();
+  render(
+    <ProductCard
+      addToCart={props?.addToCart ? props?.addToCart : mockAddToCart}
+      product={props.product ? props.product : product}
+    />
+  );
+  const ui = screen.getByTestId('ProductCard')
+  return ui;
+}
 
 describe("ProductCard", () => {
   it("exists", () => {
@@ -26,24 +43,33 @@ describe("ProductCard", () => {
   });
 
   it("shows the product price", () => {
-    const product = {price: 11.11};
-    render(<ProductCard addToCart={jest.fn()} product={product} />)
-  screen.getByTestId('price');
-
+    const products = [
+      {
+        price: 11.11,
+        name: "product1",
+        description: "description1",
+      },
+      {
+        price: 22.22,
+        name: "product2",
+        description: "description2",
+      },
+    ];
+    for (let product of products) {
+      const ui = renderUi({product})
+      expect(ui).toHaveTextContent(product.price);
+      cleanup();
+    }
   });
 
-  it('shows the product short description', () => {
-    render(<ProductCard addToCart={jest.fn()}/>);
-   const ui =screen.getByTestId('description');
-   expect(ui).toHaveTextContent('description');
+  it("shows the product short description", () => {
+    render(<ProductCard addToCart={jest.fn()} />);
+    const ui = screen.getByTestId("description");
+    expect(ui).toHaveTextContent("description");
+  });
+
+  it("shows the product name", () => {
+    render(<ProductCard addToCart={jest.fn()} />);
+    const ui = screen.getByTitle("productName");
+  });
 });
-
-it('shows the product name', () => {
-  render(<ProductCard addToCart={jest.fn()} />);
-  const ui = screen.getByTitle('productName');
- 
-
-});
-
-});
-
